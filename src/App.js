@@ -1,9 +1,14 @@
-import './App.css';
+import './styles/App.css';
+import { Routes, Route, Link } from "react-router-dom";
+import HomeUsers from './routes/HomeUsers';
 
 function App() {
   return (
     <div className="App">
-      <h1>Osensus Viktorya task</h1>
+      <Routes>
+        <Route path="/" element={<HomeUsers />} />
+        <Route path="/users" element={<HomeUsers />} />
+      </Routes>
     </div>
   );
 }
