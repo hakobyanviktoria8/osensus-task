@@ -1,8 +1,7 @@
 import React from 'react'
-import usersData from './../jsons/users.json';
 import { Link } from "react-router-dom";
 
-function UserComp({scan}) {
+function UserComp({scan, usersData}) {
   return (
     <Link to={`/users/${scan.id}`} className="user">
         <h2 className={scan.status}>{scan.id}</h2>
