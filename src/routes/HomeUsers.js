@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "./../styles/HomeUsers.css"
 import usersData from './../jsons/users.json';
 import scansData from './../jsons/scans.json';
-
-// console.log("usersData",usersData)
-// console.log("scansData",scansData)
+import { Link } from "react-router-dom";
 
 function HomeUsers() {
     const[scansAllData, setScansAllData]= useState([])
@@ -27,29 +25,24 @@ function HomeUsers() {
         func(scansData)
     }, [])
     
-    
-    
-    // const[users, setUsers]= useState(usersData)
-    // const[scans, setScans]= useState(scansData)
-
   return (
     <div className='homeUsersWrapper'>
         <div className='statuses'>
             <h2>Statuses</h2>
             <div className='statuseTypes'>
-                <div >
+                <div>
                     <span className='waiting'/>
                     <p>Waiting</p>
                 </div>
-                <div >
+                <div>
                     <span className='in_progress'/>
                     <p>In progress</p>
                 </div>
-                <div >
+                <div>
                     <span className='done'/>
                     <p>Done</p>
                 </div>
-                <div >
+                <div>
                     <span className='failed'/>
                     <p>Failed</p>
                 </div>               
@@ -61,14 +54,14 @@ function HomeUsers() {
             </div>
             <div className="usersWrapper">   
                 {scansAllData[page]?.map(scan=>
-                    <div className={`user ${scan.status}`} key={scan.id}>
-                        <h2>{scan.id}</h2>
+                    <Link to={`/users/${scan.id}`} className="user" key={scan.id}>
+                        <h2 className={scan.status}>{scan.id}</h2>
                         <h3>{usersData[scan.id]?usersData[scan.id].name:"Name"} / {usersData[scan.id]?usersData[scan.id].email:"Email"}</h3>
-                        <div className='statusAndData'>
+                        <div className="statusAndData">
                             <span>{scan.status}</span>
                             <span>{scan.createdAt.slice(0,10)}</span>
                         </div>
-                   </div>
+                   </Link>
                 )}             
             </div>
             <div className="paginationWrapper">

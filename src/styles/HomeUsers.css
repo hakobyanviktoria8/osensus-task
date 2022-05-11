@@ -59,7 +59,7 @@
 }
 .mainContent > .usersWrapper{
     margin-bottom: 20px;
-    height: calc(100% - 170px);
+    height: calc(100% - 160px);
     overflow: hidden;
 }
 .user{
@@ -68,9 +68,13 @@
     border-radius: 5px;
     margin-bottom: 20px;
     cursor: pointer;
+    color: #5c5c5c;
+    text-decoration: none;
+    display: block;
 }
 .user > h2{
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    padding: 5px;
 }
 .user > .statusAndData{
     display: flex;
