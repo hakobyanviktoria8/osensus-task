@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import "./../styles/HomeUsers.css"
-import usersData from './../jsons/users.json';
 import scansData from './../jsons/scans.json';
-import { Link } from "react-router-dom";
+import StatuseType from '../components/StatuseType';
+import UserComp from '../components/UserComp';
 
 function HomeUsers() {
     const[scansAllData, setScansAllData]= useState([])
@@ -20,7 +20,6 @@ function HomeUsers() {
                 newArr[row].push(arr[i]);
             }
             setScansAllData(newArr)
-            // console.log(newArr)
         }    
         func(scansData)
     }, [])
@@ -30,22 +29,10 @@ function HomeUsers() {
         <div className='statuses'>
             <h2>Statuses</h2>
             <div className='statuseTypes'>
-                <div>
-                    <span className='waiting'/>
-                    <p>Waiting</p>
-                </div>
-                <div>
-                    <span className='in_progress'/>
-                    <p>In progress</p>
-                </div>
-                <div>
-                    <span className='done'/>
-                    <p>Done</p>
-                </div>
-                <div>
-                    <span className='failed'/>
-                    <p>Failed</p>
-                </div>               
+                <StatuseType className="waiting" type="Waiting"/>
+                <StatuseType className="in_progress" type="In progress"/>
+                <StatuseType className="done" type="Done"/>
+                <StatuseType className="failed" type="Failed"/>            
             </div>
         </div>
         <div className='mainContent'>
@@ -54,14 +41,7 @@ function HomeUsers() {
             </div>
             <div className="usersWrapper">   
                 {scansAllData[page]?.map(scan=>
-                    <Link to={`/users/${scan.id}`} className="user" key={scan.id}>
-                        <h2 className={scan.status}>{scan.id}</h2>
-                        <h3>{usersData[scan.id]?usersData[scan.id].name:"Name"} / {usersData[scan.id]?usersData[scan.id].email:"Email"}</h3>
-                        <div className="statusAndData">
-                            <span>{scan.status}</span>
-                            <span>{scan.createdAt.slice(0,10)}</span>
-                        </div>
-                   </Link>
+                    <UserComp scan={scan}  key={scan.id} />
                 )}             
             </div>
             <div className="paginationWrapper">
