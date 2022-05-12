@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<HomeUsers />} />
+        <Route path="/osensus-task" element={<HomeUsers />} />
         <Route path="users/:userId" element={<User/>} />
       </Routes>
     </div>
