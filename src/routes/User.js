@@ -6,20 +6,17 @@ import scansData from './../jsons/scans.json';
 function User() {  
     const { userId } = useParams();  
     const user = scansData[userId]
-    // console.log(scansData[userId])
 
   return (
     <div className='userWrapper'>
-        <div>
-            <div className='description'>
-                <h2>{user.id}</h2>
-                <p>{user.description}</p>
-            </div>
-            <div className='thumbnailUrl'>
-                <img src={user.thumbnailUrl}/>
-            </div>
+        <div className='description'>
+            <h2>{user.id}</h2>
+            <p>{user.description}</p>
+            <Link to="/">Go back</Link>
         </div>
-        <Link to="/">Go back</Link>
+        <div className='thumbnailUrl'>
+            <img src={user.thumbnailUrl}/>
+        </div>
     </div>
   )
 }

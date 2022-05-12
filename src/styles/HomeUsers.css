@@ -7,7 +7,7 @@
     padding: 20px;
 }
 
-/* statuses */
+/* statuses Styles */
 .statuses {
     width: 30%;
     border-right: 1px solid rgb(239, 239, 239);
@@ -21,6 +21,7 @@
     display: flex;
     align-items: center;
     margin: 25px 0;
+    flex-wrap: wrap;
 }
 .statuses > .statuseTypes > div > span{
     width: 50px;
@@ -45,25 +46,31 @@
     color: #5c5c5c;
 }
 
-/* mainContent */
+
+/* mainContent  Styles */
 .mainContent{
     width: 70%;
     padding: 20px;
     height: 100%;
 }
+
+/* mainContent search part Styles */
 .mainContent > .searchWrapper{
     width: 100%;
     height: 40px;
     border-bottom: 1px solid rgb(239, 239, 239);
     margin-bottom: 20px;
+    margin-top: 10px;
 }
 .mainContent > .searchWrapper input{
     width: 100%;
     padding: 5px;
 }
+
+/* mainContent search part Styles */
 .mainContent > .usersWrapper{
-    margin-bottom: 20px;
-    height: calc(100% - 160px);
+    margin-bottom: 10px;
+    height: calc(100% - 120px);
     overflow: hidden;
 }
 .user{
@@ -77,18 +84,20 @@
     display: block;
 }
 .user > h2{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     padding: 5px;
 }
 .user > .statusAndData{
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .notFound > button{
     padding: 10px;
     margin-top: 20px;
 }
+
+/* mainContent pagination Wrapper Styles */
 .mainContent > .paginationWrapper{
     border-top: 1px solid rgb(239, 239, 239);
     height: 80px;
@@ -101,4 +110,29 @@
     height: 30px;
     margin: 5px;
     font-weight: bold;
+}
+
+/* media style */
+@media (max-width: 600px) {
+    .App{
+        background: none;
+    }
+    .homeUsersWrapper{
+        flex-direction: column;
+        width: 90%;
+    }
+    .homeUsersWrapper> div {
+        width: 100%;
+        border: none;
+    }
+
+    /* user page Style */
+    .userWrapper{
+        flex-direction: column-reverse;
+        height: auto !important;
+        width: 90%;
+    }
+    .userWrapper> div{
+        width: 100%;
+    }
 }

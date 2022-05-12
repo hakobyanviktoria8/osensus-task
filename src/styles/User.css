@@ -5,11 +5,11 @@
     background: #fff;
     padding: 20px;
     color: #5c5c5c;
-}
-.userWrapper > div{
     display: flex;
 }
-.userWrapper > a{
+
+/* description styles */
+.userWrapper > .description> a{
     padding: 40px 20px;
     display: block;
     color: #5c5c5c;
@@ -24,6 +24,8 @@
     font-size: 30px;
     margin-bottom: 20px;
 }
+
+/* image styles */
 .thumbnailUrl{
     width: 30%;
     padding: 20px;
@@ -31,4 +33,5 @@
 .thumbnailUrl > img{
     width: 100%;
     border: 1px solid rgb(239, 239, 239);
+    max-height: 80vh;
 }
