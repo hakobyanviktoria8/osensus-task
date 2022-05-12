@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/osensus-task/static/css/main.d57c60a6.css",
+    "main.js": "/osensus-task/static/js/main.06a3ea54.js",
+    "index.html": "/osensus-task/index.html",
+    "main.d57c60a6.css.map": "/osensus-task/static/css/main.d57c60a6.css.map",
+    "main.06a3ea54.js.map": "/osensus-task/static/js/main.06a3ea54.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d57c60a6.css",
+    "static/js/main.06a3ea54.js"
+  ]
+}
